@@ -1,0 +1,3 @@
+wshop_product_homepage:
+    path:     /
+    defaults: { _controller: WshopProductBundle:Default:index }
