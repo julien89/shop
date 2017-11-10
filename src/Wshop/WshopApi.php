@@ -13,11 +13,21 @@
 			$this->client = new GuzzleHttp\Client();
 		}
 
-
+        /**
+        * Set le type de donnée que l'on veut (Produit, Rayon)
+        * @param [type] $type Type de données
+        * @author <[<julien.jesudasan@gmail.com>]>
+        */
 		public function setType($type) {
 			$this->type = $type;
 		}
 
+        /**
+         * [sendRequest description]
+         * @param  string $action [description]
+         * @param  array  $params [description]
+         * @return [type]         [description]
+         */
 		public function sendRequest(string $action, array $params) {
             
             $queryParams = (!empty($params)) ? $this->createQueryParams($params) : '';
@@ -26,14 +36,27 @@
             $this->setResponse($response->getBody()->getContents());
 		}
 
+        /**
+         * [getResponse description]
+         * @return [type] [description]
+         */
 		public function getResponse() {
             return $this->response;
 		}
 
+        /**
+         * [setResponse description]
+         * @param string $response [description]
+         */
 		private function setResponse( string $response) {
 			$this->response = $response;
 		}
 
+        /**
+         * [createQueryParams description]
+         * @param  array  $params [description]
+         * @return [type]         [description]
+         */
         private function createQueryParams(array $params) : string {
 
             $queryParams = '';
