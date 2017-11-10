@@ -1,4 +1,4 @@
 services:
-#    wshop_product.example:
-#        class: Wshop\ProductBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    wshop.api:
+        class: Wshop\WshopApi
+
